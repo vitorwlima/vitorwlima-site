@@ -2,7 +2,7 @@ _October 2025_
 
 ---
 
-Here are my thoughts on the current state of AI for coding, and how you can get the most out of it. First of all, I don't believe in "vibe coding"[1] (at least not in present time). What I believe is that, by using AI, competent engineers can achieve **0.5x to 10x** their usual productivity, depending on the task.
+Here are my thoughts on the current state of AI for coding, and how you can get the most out of it. First of all, I don't believe in vibe coding[1] (at least not in present time). What I believe is that, by using AI, competent engineers can achieve **0.5x to 10x** their usual productivity, depending on the task.
 
 ### Why 0.5x?
 
@@ -72,3 +72,6 @@ My honest recommendation for every engineer reading this is to try changing your
 We need to experiment to learn what actually works best for us. Humans can get so caught up on their own ways, that they may not realize when something is doing good or bad to them.
 
 You may surprise yourself. I'm ending my AI week now, and I'll definitely keep using it more than before, but will dial back a lot from what it currently is. All is a balance.
+
+[1] Vibe coding is prompting the LLM and never reading the code, unlike AI-assisted coding where the LLM is just **helping** you write it.
+[2] AI slop refers to the low-quality and nonsense code that is sometimes output by LLMs.

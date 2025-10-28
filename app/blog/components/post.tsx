@@ -1,6 +1,36 @@
 import Markdown from "react-markdown";
+import { Tooltip } from "./tooltip";
 
-export const Post = ({ markdown }: { markdown: string }) => {
+const extractFootnotes = (markdown: string) => {
+  const footnoteRegex = /^\[(\d+)\]\s+(.+)$/gm;
+  const footnotes: Record<string, string> = {};
+
+  markdown.replace(footnoteRegex, (match, num, text) => {
+    footnotes[num] = text;
+    return match;
+  });
+
+  return {
+    footnotes,
+    cleanMarkdown: markdown.replace(footnoteRegex, "").trim(),
+  };
+};
+
+export const Post = ({ markdown: rawMarkdown }: { markdown: string }) => {
+  const { footnotes, cleanMarkdown } = extractFootnotes(rawMarkdown);
+
+  const renderMarkdownWithTooltips = (text: string) => {
+    const parts = text.split(/(\[\d+\])/);
+
+    return parts.map((part, i) => {
+      const match = part.match(/\[(\d+)\]/);
+      if (match && footnotes[match[1]]) {
+        return <Tooltip key={i} number={match[1]} text={footnotes[match[1]]} />;
+      }
+      return part;
+    });
+  };
+
   return (
     <article className="p-8 max-w-5xl mx-auto w-full">
       <Markdown
@@ -17,9 +47,40 @@ export const Post = ({ markdown }: { markdown: string }) => {
           h4: ({ children }) => (
             <h4 className="mb-2 text-lg font-bold">{children}</h4>
           ),
-          p: ({ children }) => (
-            <p className="leading-relaxed not-last:mb-5">{children}</p>
-          ),
+          p: ({ children }) => {
+            const renderedChildren = Array.isArray(children)
+              ? children.map((child) =>
+                  typeof child === "string"
+                    ? renderMarkdownWithTooltips(child)
+                    : child
+                )
+              : typeof children === "string"
+              ? renderMarkdownWithTooltips(children)
+              : children;
+
+            return (
+              <p className="leading-relaxed not-last:mb-5">
+                {renderedChildren}
+              </p>
+            );
+          },
+          blockquote: ({ children }) => {
+            const renderedChildren = Array.isArray(children)
+              ? children.map((child) =>
+                  typeof child === "string"
+                    ? renderMarkdownWithTooltips(child)
+                    : child
+                )
+              : typeof children === "string"
+              ? renderMarkdownWithTooltips(children)
+              : children;
+
+            return (
+              <blockquote className="mb-6 border-l-4 border-cyan-500 pl-4 italic">
+                {renderedChildren}
+              </blockquote>
+            );
+          },
           ul: ({ children }) => (
             <ul className="mb-6 list-disc pl-6 marker:text-xl marker:text-cyan-500 [&_ul]:mt-4">
               {children}
@@ -30,12 +91,19 @@ export const Post = ({ markdown }: { markdown: string }) => {
               {children}
             </ol>
           ),
-          li: ({ children }) => <li className="mb-3 pl-2">{children}</li>,
-          blockquote: ({ children }) => (
-            <blockquote className="mb-6 border-l-4 border-cyan-500 pl-4 italic">
-              {children}
-            </blockquote>
-          ),
+          li: ({ children }) => {
+            const renderedChildren = Array.isArray(children)
+              ? children.map((child) =>
+                  typeof child === "string"
+                    ? renderMarkdownWithTooltips(child)
+                    : child
+                )
+              : typeof children === "string"
+              ? renderMarkdownWithTooltips(children)
+              : children;
+
+            return <li className="mb-3 pl-2">{renderedChildren}</li>;
+          },
           a: ({ children, href }) => {
             const isExternalLink = href
               ? !href.startsWith("/") && !href.startsWith("#")
@@ -78,7 +146,7 @@ export const Post = ({ markdown }: { markdown: string }) => {
           ),
         }}
       >
-        {markdown}
+        {cleanMarkdown}
       </Markdown>
     </article>
   );
