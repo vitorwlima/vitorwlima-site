@@ -32,7 +32,7 @@ export const Post = ({ markdown: rawMarkdown }: { markdown: string }) => {
   };
 
   return (
-    <article className="p-8 max-w-5xl mx-auto w-full">
+    <article className="p-4 lg:p-8 md:mt-0 mt-12 max-w-5xl mx-auto w-full">
       <Markdown
         components={{
           h1: ({ children }) => (
