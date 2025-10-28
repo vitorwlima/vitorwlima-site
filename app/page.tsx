@@ -3,37 +3,37 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <div className="relative h-screen bg-zinc-950 text-zinc-50">
-      <div className="flex flex-col items-center justify-center absolute top-0 left-0 w-full h-full z-10 bg-black/50">
+    <div className="h-screen relative bg-zinc-950 text-zinc-50">
+      <div className="flex absolute gap-28 inset-0 items-center justify-center h-screen z-20">
         <h1 className="text-lg">
-          Hi, I&apos;m{" "}
+          Hi, I&apos;m <br />
           <strong className="text-4xl font-semibold">Vitor Lima</strong>
         </h1>
 
-        <p className="mt-2">
-          Software engineer, currently building{" "}
-          <Link
-            href="https://matrices.ai"
-            target="_blank"
-            className="text-cyan-400 underline"
-          >
-            Matrices
-          </Link>
-          .
-        </p>
+        <div className="flex flex-col justify-center">
+          <p className="mt-2">
+            Software engineer, currently building{" "}
+            <Link
+              href="https://matrices.ai"
+              target="_blank"
+              className="text-cyan-400 underline"
+            >
+              Matrices
+            </Link>
+            .
+          </p>
 
-        <p className="mt-1">
-          I am starting to write more often, check out my{" "}
-          <Link
-            href="https://vitorlima.com/blog"
-            target="_blank"
-            className="text-cyan-400 underline"
-          >
-            blog here
-          </Link>
-          .
-        </p>
+          <p className="mt-1">
+            I am starting to write more often, check out my{" "}
+            <Link href="/blog" className="text-cyan-400 underline">
+              blog here
+            </Link>
+            .
+          </p>
+        </div>
       </div>
+
+      <div className="absolute inset-0 bg-black/40 z-10" />
 
       <DottedGlowBackground
         className="pointer-events-none mask-radial-to-90% mask-radial-at-center"
