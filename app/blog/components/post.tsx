@@ -2,11 +2,11 @@ import Markdown from "react-markdown";
 
 export const Post = ({ markdown }: { markdown: string }) => {
   return (
-    <article className="p-4 max-w-5xl mx-auto w-full">
+    <article className="p-8 max-w-5xl mx-auto w-full">
       <Markdown
         components={{
           h1: ({ children }) => (
-            <h1 className="mb-5 text-3xl font-bold">{children}</h1>
+            <h1 className="mb-2 text-3xl font-bold">{children}</h1>
           ),
           h2: ({ children }) => (
             <h2 className="mb-4 text-2xl font-bold">{children}</h2>

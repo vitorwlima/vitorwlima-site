@@ -12,7 +12,7 @@ const BlogLayout = async ({ children }: { children: React.ReactNode }) => {
 
   return (
     <main className="flex relative">
-      <aside className="max-w-[300px] w-full p-4 flex flex-col gap-2 sticky h-fit top-0">
+      <aside className="max-w-[280px] w-full p-8 flex flex-col gap-1 sticky h-fit top-0">
         {[{ slug: "", title: "Home", date: "" }, ...posts].map((post) => {
           return <PostLink key={post.slug} post={post} />;
         })}
