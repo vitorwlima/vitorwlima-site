@@ -21,7 +21,7 @@ export const Post = ({ markdown }: { markdown: string }) => {
             <p className="leading-relaxed not-last:mb-5">{children}</p>
           ),
           ul: ({ children }) => (
-            <ul className="mb-4 list-disc pl-6 marker:text-xl marker:text-cyan-500">
+            <ul className="mb-6 list-disc pl-6 marker:text-xl marker:text-cyan-500 [&_ul]:mt-4">
               {children}
             </ul>
           ),
@@ -32,7 +32,7 @@ export const Post = ({ markdown }: { markdown: string }) => {
           ),
           li: ({ children }) => <li className="mb-3 pl-2">{children}</li>,
           blockquote: ({ children }) => (
-            <blockquote className="mb-4 border-l-4 border-cyan-500 pl-4 italic">
+            <blockquote className="mb-6 border-l-4 border-cyan-500 pl-4 italic">
               {children}
             </blockquote>
           ),

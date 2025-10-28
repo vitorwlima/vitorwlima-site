@@ -14,11 +14,11 @@ export type Post = PostMeta & {
 const POSTS_DIR = path.join(process.cwd(), "posts");
 
 const POST_INDEX: PostMeta[] = [
-  // {
-  //   slug: "coding-with-ai",
-  //   title: "Coding With AI",
-  //   date: "28/10/2025",
-  // },
+  {
+    slug: "coding-with-ai",
+    title: "Coding with AI",
+    date: "28/10/2025",
+  },
 ];
 
 export const listPosts = () => POST_INDEX;
@@ -32,7 +32,8 @@ export const getPostBySlug = async (slug: string) => {
   }
 
   const markdownPath = path.join(POSTS_DIR, `${slug}.md`);
-  const markdown = await fs.readFile(markdownPath, "utf-8");
+  const fileMarkdown = await fs.readFile(markdownPath, "utf-8");
+  const markdown = isHome ? fileMarkdown : `# ${meta?.title}\n${fileMarkdown}`;
 
   return {
     ...meta,
