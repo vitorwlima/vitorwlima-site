@@ -1,6 +1,10 @@
-import { getPostBySlug } from "@/posts";
+import { getPostBySlug, listPosts } from "@/posts";
 import { Post } from "../components/post";
 import { notFound } from "next/navigation";
+
+export const generateStaticParams = async () => {
+  return listPosts().map(({ slug }) => ({ id: slug }));
+};
 
 export const generateMetadata = async ({
   params,

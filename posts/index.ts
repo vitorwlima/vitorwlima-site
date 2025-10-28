@@ -14,11 +14,11 @@ export type Post = PostMeta & {
 const POSTS_DIR = path.join(process.cwd(), "posts");
 
 const POST_INDEX: PostMeta[] = [
-  {
-    slug: "coding-with-ai",
-    title: "Coding With AI",
-    date: "28/10/2025",
-  },
+  // {
+  //   slug: "coding-with-ai",
+  //   title: "Coding With AI",
+  //   date: "28/10/2025",
+  // },
 ];
 
 export const listPosts = () => POST_INDEX;
