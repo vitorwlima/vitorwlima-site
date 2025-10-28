@@ -10,7 +10,6 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "Vitor Lima",
-  description: "Vitor Lima's personal website.",
 };
 
 const RootLayout = ({
@@ -21,7 +20,10 @@ const RootLayout = ({
   return (
     <html lang="en">
       <body
-        className={cn(nunito.variable, "min-h-screen font-nunito antialiased")}
+        className={cn(
+          nunito.variable,
+          "min-h-screen bg-zinc-900 text-zinc-50 font-nunito antialiased"
+        )}
       >
         {children}
       </body>

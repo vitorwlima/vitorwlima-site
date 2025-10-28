@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <div className="h-screen relative bg-zinc-950 text-zinc-50">
-      <div className="flex absolute gap-28 inset-0 items-center justify-center h-screen z-20">
+    <main className="h-screen relative">
+      <div className="flex absolute md:flex-row flex-col gap-10 text-center md:text-left lg:gap-28 inset-0 items-center justify-center h-screen z-20 p-2">
         <h1 className="text-lg">
           Hi, I&apos;m <br />
           <strong className="text-4xl font-semibold">Vitor Lima</strong>
@@ -49,7 +49,7 @@ const Home = () => {
         speedMax={1.6}
         speedScale={1}
       />
-    </div>
+    </main>
   );
 };
 
