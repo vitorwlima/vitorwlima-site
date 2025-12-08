@@ -19,6 +19,11 @@ const POST_INDEX: PostMeta[] = [
     title: "Coding with AI",
     date: "28/10/2025",
   },
+  {
+    slug: "correct-way-rl",
+    title: "The correct way of doing RL",
+    date: "07/12/2025",
+  },
 ];
 
 export const listPosts = () => POST_INDEX;
