@@ -40,13 +40,13 @@ The result is an agent that performs beautifully in training, but fails when dea
 
 ### How environments can match reality
 
-By now, the problem should be clear: inaccurate environments train agents for fictional worlds. The goal, then, is not to create convincing replicas, but to create behaviorally accurate ones.
+Inaccurate environments produce agents optimized for fictional worlds. The goal, then, is not to create convincing replicas, but to create behaviorally accurate ones.
 
 The only way to approach this problem is through continuous comparison against reality. Every feature in a replica should be treated as a hypothesis about how the real system behaves. Every flow must be compared side-by-side to the real one, until it's confusing to tell them apart. Every little behavior difference must be noted so it can be fixed. Every inconsistency must be raised.
 
 This transforms environment building into an ongoing validation loop: observe real behavior, encode it, compare it against reality, fix any failures, and repeat. And it shouldn't start when the initial build is close to finished, but throughout the entire process.
 
-When this process is taken seriously, something important happens. The environment is no longer just a replica, but rather an accurate simulation of reality. Agents training on top of it are not becoming good at a fake world, they are practicing how to act on top of real behaviors and edge cases.
+When this process is taken seriously, something important happens. The environment is no longer just a replica, but rather a faithful simulation of reality. Agents training on top of it are not becoming good at a fake world, they are practicing how to act on top of real behaviors and edge cases.
 
 That is the difference between environments built for demonstration and environments built for real-world operation.
 
