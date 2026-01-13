@@ -35,17 +35,17 @@ const Home = () => {
           <div className="mt-1 flex items-center gap-1 w-fit mx-auto md:mx-0">
             <p>Connect with me:</p>
             <SocialIcon
-              url="https://x.com/vitorwindb"
-              target="_blank"
-              className="size-6!"
-            />
-            <SocialIcon
               url="https://www.linkedin.com/in/vitor-windberg"
               target="_blank"
               className="size-6!"
             />
             <SocialIcon
               url="https://github.com/vitorwlima"
+              target="_blank"
+              className="size-6!"
+            />
+            <SocialIcon
+              url="https://x.com/vitorwindb"
               target="_blank"
               className="size-6!"
             />
