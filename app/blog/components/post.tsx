@@ -82,7 +82,7 @@ export const Post = ({ markdown: rawMarkdown }: { markdown: string }) => {
             );
           },
           ul: ({ children }) => (
-            <ul className="mb-6 list-disc pl-6 marker:text-xl marker:text-cyan-500 [&_ul]:mt-4">
+            <ul className="mb-5 list-disc pl-6 marker:text-xl marker:text-cyan-500 [&_ul]:mt-4">
               {children}
             </ul>
           ),
@@ -102,7 +102,7 @@ export const Post = ({ markdown: rawMarkdown }: { markdown: string }) => {
               ? renderMarkdownWithTooltips(children)
               : children;
 
-            return <li className="mb-3 pl-2">{renderedChildren}</li>;
+            return <li className="mb-1 pl-2 [&_ul]:mt-1 [&_ul]:pl-4">{renderedChildren}</li>;
           },
           a: ({ children, href }) => {
             const isExternalLink = href
