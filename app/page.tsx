@@ -15,11 +15,11 @@ const Home = () => {
           <p className="mt-2">
             Software engineer, currently building{" "}
             <Link
-              href="https://matrices.ai"
+              href="https://railblocks.com"
               target="_blank"
               className="text-cyan-400 underline"
             >
-              Matrices
+              Railblocks
             </Link>
             .
           </p>

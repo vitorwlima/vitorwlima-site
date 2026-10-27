@@ -15,11 +15,6 @@ const POSTS_DIR = path.join(process.cwd(), "posts");
 
 const POST_INDEX: PostMeta[] = [
   {
-    slug: "cracked-engineer",
-    title: "How to become a cracked engineer",
-    date: "27/01/2026",
-  },
-  {
     slug: "correct-way-rl",
     title: "The correct way of doing RL",
     date: "07/12/2025",
