@@ -13,7 +13,7 @@ const Home = () => {
 
         <div className="flex flex-col justify-center">
           <p className="mt-2">
-            Software engineer, currently building{" "}
+            Software engineer, currently on{" "}
             <Link
               href="https://railblocks.com"
               target="_blank"
